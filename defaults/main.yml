@@ -158,3 +158,20 @@ trove_api_paste_ini_overrides: {}
 trove_conductor_config_overrides: {}
 trove_taskmanager_config_overrides: {}
 trove_policy_overrides: {}
+
+# Older versions of ansible have trouble with local var includes apparently
+# and we are rolling back to ansible 1.9
+cache_timeout: 600
+
+trove_distro_packages:
+  - apache2
+  - apache2-utils
+  - libapache2-mod-wsgi
+  - git
+  - build-essential
+  - python-dev
+  - python-software-properties
+  - python-pip
+  - mysql-client
+  - libxslt1-dev
+  - qemu-utils
