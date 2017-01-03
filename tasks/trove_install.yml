@@ -52,7 +52,7 @@
       {{ pip_install_options | default('') }}
   register: install_packages
   until: install_packages|success
-  with_items: {{ trove_requires_pip_packages }}
+  with_items: "{{ trove_requires_pip_packages }}"
   retries: 5
   delay: 2
 
@@ -105,7 +105,7 @@
   retries: 5
   delay: 2
   when: trove_developer_mode | bool
-  with_items: {{ trove_pip_packages }}
+  with_items: "{{ trove_pip_packages }}"
   notify:
     - Restart trove API services
     - Restart trove conductor service
